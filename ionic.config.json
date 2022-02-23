@@ -1,0 +1,7 @@
+{
+  "name": "wms_mobilee",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

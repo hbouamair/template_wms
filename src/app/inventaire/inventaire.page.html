@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>inventaire</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="page-upload">
+  <ion-segment
+          [(ngModel)]="selectedSegement"
+          (ionChange)="segmentChanged($event)"
+          value="CreateInv"
+           >
+          <ion-segment-button  value="CreateInv">
+       
+              <ion-icon src="../../assets/createInv.svg "></ion-icon>
+              <ion-label>Create Inventaire</ion-label>
+          
+          </ion-segment-button>
+          <ion-segment-button>
+            
+              <ion-icon src="../../assets/listeInve.svg "></ion-icon>
+              <ion-label>Liste des inventaire</ion-label>
+           
+          </ion-segment-button>
+         
+        </ion-segment>
+
+
+
+
+<ion-content *ngIf="selectedSegement == 'CreateInv'">
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>reference
+       
+      </ion-card-subtitle>
+      <ion-label>Inventaire 01 </ion-label>
+     
+      <ion-label slot="end">Inventaire 01 </ion-label>
+    </ion-card-header>
+  
+    <ion-card-content>
+      
+      
+        <ion-button  class="upload" (click)="inputFile.click()">
+          <ion-label>Choisir un fichier &nbsp;</ion-label>   <ion-icon  src="../../assets/ms-excel.svg"></ion-icon> 
+        
+        <input #inputFile id="input-file"  style="opacity:0" type="file" (change)="excelRead($event)"
+        multiple/>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+
+
+
+
+ 
+
+
+  </ion-content>
+    
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="qr-scan" >
+   <ion-fab-button  (click)="goToBarcodeScan()" > <ion-icon name="scan"></ion-icon></ion-fab-button>
+  <span class="qr">Scanner  Qr Code</span> 
+  </ion-toolbar>
+</ion-footer>

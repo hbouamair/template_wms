@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>produit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="form ion-padding">
+              
+    <ion-item class="select">
+      <ion-label position="floating"> Material
+      <ion-input [(ngModel)]="material"  type="text"> </ion-input ></ion-label> 
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"
+        >Description<ion-input [(ngModel)]="description"  type="text"></ion-input
+      ></ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">cagette</ion-label>
+      <ion-input [(ngModel)]="cagette"  type="text"></ion-input>
+    </ion-item>
+    
+
+    
+    <ion-fab-button (click)="createProduct()"
+    ><ion-icon src="../../assets/save.svg"></ion-icon>
+  </ion-fab-button   >
+  <ion-label> Enregistrer</ion-label>
+
+  </ion-list>
+  <ion-scroll *ngIf="hideMe" scrollY="true" direction="xy">
+
+        
+    <ion-row  *ngFor="let product of crud.Products"   class="data-row">
+      <ion-col size="3"> {{product.material}}</ion-col>
+      <ion-col size="3"> {{product.description}} </ion-col>
+      <ion-col size="4"> {{product.cagette}} </ion-col>
+      
+    </ion-row>
+  </ion-scroll>
+
+</ion-content>
